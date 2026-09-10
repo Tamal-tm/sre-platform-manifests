@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-a-config
+  namespace: sre-platform
+data:
+  SERVICE_B_URL: "http://service-b:5000"
