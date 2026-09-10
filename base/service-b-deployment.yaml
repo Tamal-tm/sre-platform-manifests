@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: service-b
-          image: <your-dockerhub-username>/service-b:latest
+          image: tamal23/service-b:latest
           ports:
             - containerPort: 5000
           resources:

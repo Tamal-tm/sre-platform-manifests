@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: service-a
-          image: <your-dockerhub-username>/service-a:latest
+          image: tamal23/service-a:latest
           ports:
             - containerPort: 3000
           envFrom:
