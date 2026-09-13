@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: service-b
-          image: tamal23/service-b:v2-chaos-test
+          image: tamal23/service-b:v3-stable
           ports:
             - containerPort: 5000
           resources:
