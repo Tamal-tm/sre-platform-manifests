@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: service-b
   namespace: sre-platform
+  labels:
+    app: service-b
 spec:
   selector:
     app: service-b
