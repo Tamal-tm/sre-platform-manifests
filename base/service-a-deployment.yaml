@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: service-a
-          image: tamal23/service-a:v1-metrics
+          image: tamal23/service-a:v2-logging
           ports:
             - containerPort: 3000
           envFrom:
