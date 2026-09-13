@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: service-a-slo
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  groups:
+    - name: slo-burn-rate
+      rules:
+        - alert: HighErrorBudgetBurn
+          expr: |
+            (
+              sum(rate(http_requests_total{route="/greet",status=~"5.."}[1h]))
+              /
+              sum(rate(http_requests_total{route="/greet"}[1h]))
+            ) > (14.4 * 0.01)
+          for: 5m
+          labels:
+            severity: critical
+          annotations:
+            summary: "service-a burning error budget 14.4x too fast"
+            description: "Error rate over the last hour exceeds the threshold for a 14.4x burn rate against the 99% SLO. At this rate the 7-day error budget will be exhausted in ~12 hours."
