@@ -10,7 +10,7 @@ here and letting ArgoCD reconcile.
 
 ## Repo structure
 
-\`\`\`
+```
 sre-platform-manifests/
 ├── argocd.yaml                  # ArgoCD Application definition — tells
 │                                 # ArgoCD to watch this repo's base/ path
@@ -26,7 +26,7 @@ sre-platform-manifests/
     │                             # how to discover and scrape service-a/b
     └── slo-alerts.yaml           # PrometheusRule — the HighErrorBudgetBurn
                                   # burn-rate alert definition
-\`\`\`
+```
 
 ## Why this repo exists separately
 
